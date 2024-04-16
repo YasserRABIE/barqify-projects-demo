@@ -6,7 +6,7 @@ function index({ imageSrcFolder, x, y }: { imageSrcFolder: string; x: MotionValu
    return (
       <div className={styles.gallery}>
          <div className={styles.imageContainer}>
-            <Image src={`/images/${imageSrcFolder}/background.jpg`} alt="image" fill />
+            <Image src={`/images/${imageSrcFolder}/background.jpg`} alt="image" fill loading="eager" />
          </div>
          <motion.div
             style={{
@@ -15,7 +15,7 @@ function index({ imageSrcFolder, x, y }: { imageSrcFolder: string; x: MotionValu
             }}
             className={styles.vignette}
          >
-            <Image src={`/images/${imageSrcFolder}/1.jpg`} alt="image" fill />
+            <Image src={`/images/${imageSrcFolder}/1.jpg`} alt="image" fill loading="eager" />
          </motion.div>
       </div>
    );
