@@ -3,20 +3,33 @@ import styles from "./page.module.scss";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import Gallery from "./components/Gallery";
-import { useSpring } from "framer-motion";
+import { faMagnifyingGlass, faArrowPointer, faLocationArrow } from "@fortawesome/free-solid-svg-icons";
+import { faEye as faEyeRegular } from "@fortawesome/free-regular-svg-icons";
 
 const projects = [
    {
+      cursorLabelIcon: faEyeRegular,
       imageSrcFolder: "ezpt_elmodeer",
+      cursorColor: "#fff",
+      cursorLabelColor: "#000",
    },
    {
+      cursorLabelIcon: faMagnifyingGlass,
       imageSrcFolder: "hag_haga",
+      cursorColor: "#000",
+      cursorLabelColor: "#fff",
    },
    {
+      cursorLabelIcon: faArrowPointer,
       imageSrcFolder: "gpal_alkalb",
+      cursorColor: "#EB5938",
+      cursorLabelColor: "#000",
    },
    {
+      cursorLabelIcon: faLocationArrow,
       imageSrcFolder: "3rapia_mahshora",
+      cursorColor: "#2B9A53",
+      cursorLabelColor: "#fff",
    },
 ];
 
@@ -30,24 +43,13 @@ export default function Home() {
       requestAnimationFrame(raf);
    }, []);
 
-   const springEffect = { stiffness: 150, damping: 15, mass: 0.1 };
-
-   const mousePosition = {
-      x: useSpring(0, springEffect),
-      y: useSpring(0, springEffect),
-   };
-
-   const handleMouse = (e: React.MouseEvent) => {
-      const { clientX, clientY } = e;
-      mousePosition.x.set(clientX - (window.innerWidth / 2) * 0.25);
-      mousePosition.y.set(clientY - (window.innerWidth / 2) * 0.3);
-   };
-
    return (
-      <main onMouseMove={handleMouse} className={styles.main}>
-         {projects.map(({ imageSrcFolder }, i) => {
-            return <Gallery key={i} {...mousePosition} imageSrcFolder={imageSrcFolder} />;
-         })}
+      <main className={styles.main}>
+         <div className={styles.main__content}>
+            {projects.map((project, i) => {
+               return <Gallery key={i} {...project} />;
+            })}
+         </div>
       </main>
    );
 }
