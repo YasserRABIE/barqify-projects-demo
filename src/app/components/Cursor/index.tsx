@@ -16,12 +16,24 @@ function Index({ cursorLabelIcon, cursorColor, cursorLabelColor }: CursorProps) 
 
    useEffect(() => {
       // change cursor position top and left based on mouse position.
-      const xMoveCursor = gsap.quickTo(cursor.current, "left", { duration: 0.2, ease: "power3" });
-      const yMoveCursor = gsap.quickTo(cursor.current, "top", { duration: 0.2, ease: "power3" });
+      const xMoveCursor = gsap.quickTo(cursor.current, "left", {
+         duration: 0.2,
+         ease: "power3",
+      });
+      const yMoveCursor = gsap.quickTo(cursor.current, "top", {
+         duration: 0.2,
+         ease: "power3",
+      });
 
       // change cursor label position top and left based on mouse position.
-      const xMoveCursorLabel = gsap.quickTo(cursorLabel.current, "left", { duration: 0.16, ease: "power3" });
-      const yMoveCursorLabel = gsap.quickTo(cursorLabel.current, "top", { duration: 0.16, ease: "power3" });
+      const xMoveCursorLabel = gsap.quickTo(cursorLabel.current, "left", {
+         duration: 0.12,
+         ease: "power3",
+      });
+      const yMoveCursorLabel = gsap.quickTo(cursorLabel.current, "top", {
+         duration: 0.12,
+         ease: "power3",
+      });
 
       // call all the functions to move cursor and label to the mouse position.
       const moveCursorAndLabel = (e: MouseEvent) => {
