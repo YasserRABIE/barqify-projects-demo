@@ -1,23 +1,26 @@
 .gallery {
-  height: 120vh;
-  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
-  .imageContainer {
-    height: 100%;
-    position: relative;
-    img {
-      width: 100%;
-      object-fit: cover;
-    }
-  }
-  .vignette {
-    width: 25vw;
-    height: 30vw;
-    position: fixed;
-    border-radius: 1.5vw;
-    overflow: hidden;
-    top: 0;
-    img {
-      object-fit: cover;
-    }
-  }
+   height: 120vh;
+   clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+   .image__container {
+      height: 100%;
+      position: relative;
+      pointer-events: none;
+      img {
+         width: 100%;
+         object-fit: cover;
+      }
+   }
+   .vignette {
+      width: 25vw;
+      height: 30vw;
+      position: fixed;
+      border-radius: 1.5vw;
+      overflow: hidden;
+      top: 0;
+      pointer-events: none;
+      img {
+         object-fit: cover;
+      }
+   }
+ 
 }
