@@ -54,6 +54,7 @@ function Index({ cursorLabelIcon, cursorColor, cursorLabelColor }: CursorProps) 
          });
       };
    }, []);
+
    return (
       <>
          <span style={{ backgroundColor: cursorColor }} className={styles.cursor} ref={cursor}></span>
